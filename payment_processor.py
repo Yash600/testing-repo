@@ -1,6 +1,7 @@
 import uuid
 
-def charge_customer(customer_id: str, amount: int, currency: str) -> dict:
+
+def charge_customer(customer_id: str, amount: int, currency: str, idempotency_key: str) -> dict:
     transaction_id = str(uuid.uuid4())
     print(f"Charging {customer_id}: {amount} {currency}")
     return {
